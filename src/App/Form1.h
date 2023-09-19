@@ -70,6 +70,7 @@ namespace CppCLRWinFormsProject {
 			// labelName
 			// 
 			this->labelName->AutoSize = true;
+			this->labelName->ForeColor = System::Drawing::Color::Orange;
 			this->labelName->Location = System::Drawing::Point(12, 19);
 			this->labelName->Name = L"labelName";
 			this->labelName->Size = System::Drawing::Size(95, 13);
@@ -80,6 +81,7 @@ namespace CppCLRWinFormsProject {
 			// labelEdad
 			// 
 			this->labelEdad->AutoSize = true;
+			this->labelEdad->ForeColor = System::Drawing::Color::Orange;
 			this->labelEdad->Location = System::Drawing::Point(12, 76);
 			this->labelEdad->Name = L"labelEdad";
 			this->labelEdad->Size = System::Drawing::Size(84, 13);
@@ -98,6 +100,7 @@ namespace CppCLRWinFormsProject {
 			// 
 			// buttonShow
 			// 
+			this->buttonShow->ForeColor = System::Drawing::Color::Navy;
 			this->buttonShow->Location = System::Drawing::Point(15, 131);
 			this->buttonShow->Name = L"buttonShow";
 			this->buttonShow->Size = System::Drawing::Size(75, 23);
