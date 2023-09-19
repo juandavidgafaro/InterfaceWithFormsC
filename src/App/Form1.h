@@ -139,7 +139,7 @@ namespace CppCLRWinFormsProject {
 			this->buttonEraser->TabIndex = 7;
 			this->buttonEraser->Text = L"Borrar";
 			this->buttonEraser->UseVisualStyleBackColor = true;
-			this->buttonEraser->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			this->buttonEraser->Click += gcnew System::EventHandler(this, &Form1::buttonEraser_Click);
 			// 
 			// Form1
 			// 
@@ -172,13 +172,7 @@ namespace CppCLRWinFormsProject {
 			Name = inputName->Text;
 		}
 		private: System::Void inputAge_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-			if (Int32::TryParse(inputAge->Text, Age)) {
-				// La conversión fue exitosa, no es necesario intentarlo nuevamente.
-			}
-			else {
-				// Manejar el caso en el que la entrada no sea un número válido.
-				// Puedes mostrar un mensaje de error o realizar alguna acción adecuada.
-			}
+			Int32::TryParse(inputAge->Text, Age);
 		}
 
 		private: System::Void buttonShow_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -198,7 +192,12 @@ namespace CppCLRWinFormsProject {
 	
 		private: System::Void txtShow_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-};
+		private: System::Void buttonEraser_Click(System::Object^ sender, System::EventArgs^ e) {
+			
+			String^ valorDefault = " ";
+			inputName->Text = valorDefault;
+			inputAge->Text = valorDefault;
+			txtShow->Text = valorDefault;
+		}
+	};
 }
