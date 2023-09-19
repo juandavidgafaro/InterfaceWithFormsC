@@ -44,6 +44,8 @@ namespace CppCLRWinFormsProject {
 		private: System::Windows::Forms::Button^ buttonShow;
 		private: System::Windows::Forms::TextBox^ inputAge;
 		private: System::Windows::Forms::TextBox^ txtShow;
+	private: System::Windows::Forms::Button^ buttonEraser;
+
 
 
 		/// <summary>
@@ -65,6 +67,7 @@ namespace CppCLRWinFormsProject {
 			this->buttonShow = (gcnew System::Windows::Forms::Button());
 			this->inputAge = (gcnew System::Windows::Forms::TextBox());
 			this->txtShow = (gcnew System::Windows::Forms::TextBox());
+			this->buttonEraser = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// labelName
@@ -127,11 +130,23 @@ namespace CppCLRWinFormsProject {
 			this->txtShow->TabIndex = 6;
 			this->txtShow->TextChanged += gcnew System::EventHandler(this, &Form1::txtShow_TextChanged);
 			// 
+			// buttonEraser
+			// 
+			this->buttonEraser->ForeColor = System::Drawing::Color::Red;
+			this->buttonEraser->Location = System::Drawing::Point(120, 131);
+			this->buttonEraser->Name = L"buttonEraser";
+			this->buttonEraser->Size = System::Drawing::Size(75, 23);
+			this->buttonEraser->TabIndex = 7;
+			this->buttonEraser->Text = L"Borrar";
+			this->buttonEraser->UseVisualStyleBackColor = true;
+			this->buttonEraser->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Controls->Add(this->buttonEraser);
 			this->Controls->Add(this->txtShow);
 			this->Controls->Add(this->inputAge);
 			this->Controls->Add(this->buttonShow);
@@ -183,5 +198,7 @@ namespace CppCLRWinFormsProject {
 	
 		private: System::Void txtShow_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		}
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
