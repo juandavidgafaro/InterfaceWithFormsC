@@ -153,7 +153,7 @@ namespace CppCLRWinFormsProject {
 			this->Controls->Add(this->inputName);
 			this->Controls->Add(this->labelEdad);
 			this->Controls->Add(this->labelName);
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Icon = gcnew System::Drawing::Icon("C:/Users/David Garcia/Documents/Proyectos .NET/[C++]/Interface/Interface/src/App/user.ico");
 			this->Name = L"Form1";
 			this->Text = L"REGISTRO";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
