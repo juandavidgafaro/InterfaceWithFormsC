@@ -23,6 +23,9 @@ namespace CppCLRWinFormsProject {
 				//
 			}
 
+			void cleanFields();
+			void showData();
+
 		protected:
 			/// <summary>
 			/// Clean up any resources being used.
@@ -44,7 +47,7 @@ namespace CppCLRWinFormsProject {
 		private: System::Windows::Forms::Button^ buttonShow;
 		private: System::Windows::Forms::TextBox^ inputAge;
 		private: System::Windows::Forms::TextBox^ txtShow;
-	private: System::Windows::Forms::Button^ buttonEraser;
+		private: System::Windows::Forms::Button^ buttonEraser;
 
 
 
@@ -176,28 +179,37 @@ namespace CppCLRWinFormsProject {
 		}
 
 		private: System::Void buttonShow_Click(System::Object^ sender, System::EventArgs^ e) {
-			// Verificar si tanto el nombre como la edad tienen valores válidos.
-			if (Name != nullptr && Age != 0) {
-				// Crear un mensaje que incluya el nombre y la edad.
-				String^ mensaje = "Nombre: " + Name + "\r\nEdad: " + Age.ToString();
 
-				// Mostrar el mensaje en el campo de texto campoMostrar.
-				txtShow->Text = mensaje;
-			}
-			else {
-				// Manejar el caso en el que falta el nombre o la edad.
-				txtShow->Text = "Falta información.";
-			}
+			showData();
 		}
 	
 		private: System::Void txtShow_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void buttonEraser_Click(System::Object^ sender, System::EventArgs^ e) {
-			
-			String^ valorDefault = " ";
-			inputName->Text = valorDefault;
-			inputAge->Text = valorDefault;
-			txtShow->Text = valorDefault;
+			cleanFields();
 		}
 	};
+
+#pragma region class method declaration
+
+	void Form1::cleanFields()
+	{
+		String^ valorDefault = " ";
+		inputName->Text = valorDefault;
+		inputAge->Text = valorDefault;
+		txtShow->Text = valorDefault;
+	}
+
+	void Form1::showData()
+	{
+		if (Name != nullptr && Age != 0) {
+			String^ mensaje = "Nombre: " + Name + "\r\nEdad: " + Age.ToString();
+
+			txtShow->Text = mensaje;
+		}
+		else {
+			txtShow->Text = "Falta información.";
+		}
+	}
+#pragma endregion
 }
